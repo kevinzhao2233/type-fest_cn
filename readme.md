@@ -109,27 +109,27 @@ type FooWithoutRainbow = Except<Foo, 'rainbow'>;
 
 ### Utilities
 
-- [`EmptyObject`](source/empty-object.d.ts) - Represents a strictly empty plain object, the `{}` value.
-- [`IsEmptyObject`](source/empty-object.d.ts) - Returns a `boolean` for whether the type is strictly equal to an empty plain object, the `{}` value.
+- [`EmptyObject`](source/empty-object.d.ts) - 表示一个严格为空的纯对象 `{}`.
+- [`IsEmptyObject`](source/empty-object.d.ts) - 返回一个 `boolean` 值，表示类型是否严格等于空的纯对象，值为 `{}`.
 - [`NonEmptyObject`](source/non-empty-object.d.ts) - Represents an object with at least 1 non-optional key.
-- [`UnknownRecord`](source/unknown-record.d.ts) - Represents an object with `unknown` value. You probably want this instead of `{}`.
-- [`Except`](source/except.d.ts) - Create a type from an object type without certain keys. This is a stricter version of [`Omit`](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys).
-- [`Writable`](source/writable.d.ts) - Create a type that strips `readonly` from all or some of an object's keys. The inverse of `Readonly<T>`.
-- [`WritableDeep`](source/writable-deep.d.ts) - Create a deeply mutable version of an `object`/`ReadonlyMap`/`ReadonlySet`/`ReadonlyArray` type. The inverse of `ReadonlyDeep<T>`. Use `Writable<T>` if you only need one level deep.
-- [`Merge`](source/merge.d.ts) - Merge two types into a new type. Keys of the second type overrides keys of the first type.
-- [`MergeDeep`](source/merge-deep.d.ts) - Merge two objects or two arrays/tuples recursively into a new type.
-- [`MergeExclusive`](source/merge-exclusive.d.ts) - Create a type that has mutually exclusive keys.
-- [`OverrideProperties`](source/override-properties.d.ts) - Override only existing properties of the given type. Similar to `Merge`, but enforces that the original type has the properties you want to override.
-- [`RequireAtLeastOne`](source/require-at-least-one.d.ts) - Create a type that requires at least one of the given keys.
-- [`RequireExactlyOne`](source/require-exactly-one.d.ts) - Create a type that requires exactly a single key of the given keys and disallows more.
-- [`RequireAllOrNone`](source/require-all-or-none.d.ts) - Create a type that requires all of the given keys or none of the given keys.
-- [`RequireOneOrNone`](source/require-one-or-none.d.ts) - Create a type that requires exactly a single key of the given keys and disallows more, or none of the given keys.
+- [`UnknownRecord`](source/unknown-record.d.ts) - 表示具有 `unnown` 值的对象。你可能想要这个，而不是`{}`。通常在一个对象的键和值对你来说都是未知的时候使用。
+- [`Except`](source/except.d.ts) - 创建一个类型，它来自一个对象去除某些特定的 key，这个类型可看作更严格的 [`Omit`](https://www.typescriptlang.org/docs/handbook/utility-types.html#omittype-keys).
+- [`Writable`](source/writable.d.ts) - 创建一个去除对象中 key 的 `readonly` 的类型。这相当于 `Readonly<T>` 的反向操作。
+- [`WritableDeep`](source/writable-deep.d.ts) - 创建`object`/`ReadonlyMap`/`ReadonlySet`/`ReadonlyArray`类型的深度可写版本。`ReadonlyDeep<T>`的反向操作。如果只需要一层深度，请使用`Writable<T>`。
+- [`Merge`](source/merge.d.ts) - 将两个类型合并为一个新类型。第二类型的键覆盖第一类型的键。
+- [`MergeDeep`](source/merge-deep.d.ts) - 将两个对象或两个数组/元组递归合并为一个新类型。
+- [`MergeExclusive`](source/merge-exclusive.d.ts) - 创建一个具有互斥键的类型，它具有两个类型的所有建，但非此即彼。
+- [`OverrideProperties`](source/override-properties.d.ts) - 使用新类型复写源类型，类似 `Merge` 但只能复写源类型中已有的属性。
+- [`RequireAtLeastOne`](source/require-at-least-one.d.ts) - 创建至少需要一个给定 key 的类型。
+- [`RequireExactlyOne`](source/require-exactly-one.d.ts) - 创建一种只需要给定 Key 中的一个 Key 而不允许更多 Key 的类型。
+- [`RequireAllOrNone`](source/require-all-or-none.d.ts) - 创建需要所有给定 Key 或不需要任何给定 Key 的类型。
+- [`RequireOneOrNone`](source/require-one-or-none.d.ts) - 创建只需要给定 Key 中的一个 Key 而不允许更多 Key 或不允许更多 Key 的类型。
 - [`RequiredDeep`](source/required-deep.d.ts) - Create a deeply required version of another type. Use [`Required<T>`](https://www.typescriptlang.org/docs/handbook/utility-types.html#requiredtype) if you only need one level deep.
-- [`OmitIndexSignature`](source/omit-index-signature.d.ts) - Omit any index signatures from the given object type, leaving only explicitly defined properties.
-- [`PickIndexSignature`](source/pick-index-signature.d.ts) - Pick only index signatures from the given object type, leaving out all explicitly defined properties.
-- [`PartialDeep`](source/partial-deep.d.ts) - Create a deeply optional version of another type. Use [`Partial<T>`](https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype) if you only need one level deep.
-- [`PartialOnUndefinedDeep`](source/partial-on-undefined-deep.d.ts) - Create a deep version of another type where all keys accepting `undefined` type are set to optional.
-- [`ReadonlyDeep`](source/readonly-deep.d.ts) - Create a deeply immutable version of an `object`/`Map`/`Set`/`Array` type. Use [`Readonly<T>`](https://www.typescriptlang.org/docs/handbook/utility-types.html#readonlytype) if you only need one level deep.
+- [`OmitIndexSignature`](source/omit-index-signature.d.ts) - 省略给定对象类型的任何索引签名（如 `[x: string]` ），只保留显式定义的属性。
+- [`PickIndexSignature`](source/pick-index-signature.d.ts) - 与 OmitIndexSignature 操作相反，选择出给定对象类型的任何索引签名（如 `[x: string]` ），去除显式定义的属性。
+- [`PartialDeep`](source/partial-deep.d.ts) - 具有递归的 `Partial`。
+- [`PartialOnUndefinedDeep`](source/partial-on-undefined-deep.d.ts) - 将值为 `undefined` 的 Key 也设置为可选的。
+- [`ReadonlyDeep`](source/readonly-deep.d.ts) - 对 `object`/`Map`/`Set`/`Array` 创建具有深度只读的类型。
 - [`LiteralUnion`](source/literal-union.d.ts) - Create a union type by combining primitive types and literal types without sacrificing auto-completion in IDEs for the literal type part of the union. Workaround for [Microsoft/TypeScript#29729](https://github.com/Microsoft/TypeScript/issues/29729).
 - [`Tagged`](source/opaque.d.ts) - Create a [tagged type](https://medium.com/@KevinBGreene/surviving-the-typescript-ecosystem-branding-and-type-tagging-6cf6e516523d) that can support [multiple tags](https://github.com/sindresorhus/type-fest/issues/665) if needed.
 - [`UnwrapTagged`](source/opaque.d.ts) - Get the untagged portion of a tagged type created with `Tagged`.
