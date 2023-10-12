@@ -69,17 +69,17 @@ PR welcome for additional commonly needed types and docs improvements. Read the 
 
 **Help wanted with reviewing [proposals](https://github.com/sindresorhus/type-fest/issues) and [pull requests](https://github.com/sindresorhus/type-fest/pulls).**
 
-## Install
+## 安装
 
 ```sh
 npm install type-fest
 ```
 
-*Requires TypeScript >=5.1*
+*需要 TypeScript >=5.1*
 
-*Works best with [`{strict: true}`](https://www.typescriptlang.org/tsconfig#strict) in your tsconfig.*
+*最好在 tsconfig 中配置 [`{strict: true}`](https://www.typescriptlang.org/tsconfig#strict)。*
 
-## Usage
+## 使用
 
 ```ts
 import type {Except} from 'type-fest';
@@ -95,17 +95,17 @@ type FooWithoutRainbow = Except<Foo, 'rainbow'>;
 
 ## API
 
-Click the type names for complete docs.
+点击类型名称前往完整文档.
 
-### Basic
+### 基本
 
-- [`Primitive`](source/primitive.d.ts) - Matches any [primitive value](https://developer.mozilla.org/en-US/docs/Glossary/Primitive).
-- [`Class`](source/basic.d.ts) - Matches a [`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
-- [`Constructor`](source/basic.d.ts) - Matches a [`class` constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
-- [`AbstractClass`](source/basic.d.ts) - Matches an [`abstract class`](https://www.typescriptlang.org/docs/handbook/classes.html#abstract-classes).
-- [`AbstractConstructor`](source/basic.d.ts) - Matches an [`abstract class`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-2.html#abstract-construct-signatures) constructor.
-- [`TypedArray`](source/typed-array.d.ts) - Matches any [typed array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray), like `Uint8Array` or `Float64Array`.
-- [`ObservableLike`](source/observable-like.d.ts) - Matches a value that is like an [Observable](https://github.com/tc39/proposal-observable).
+- [`Primitive`](source/primitive.d.ts) - 匹配任意 [基本类型](https://developer.mozilla.org/en-US/docs/Glossary/Primitive)。
+- [`Class`](source/basic.d.ts) - 匹配一个 [`class`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
+- [`Constructor`](source/basic.d.ts) - 匹配一个 [`class` 的 constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes).
+- [`AbstractClass`](source/basic.d.ts) - 匹配一个 [`抽象类`](https://www.typescriptlang.org/docs/handbook/classes.html#abstract-classes)。
+- [`AbstractConstructor`](source/basic.d.ts) - 匹配一个 [`抽象类`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-2.html#abstract-construct-signatures) 的 constructor.
+- [`TypedArray`](source/typed-array.d.ts) - 匹配任意 [typed array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray), 类似 `Uint8Array` 或者 `Float64Array`.
+- [`ObservableLike`](source/observable-like.d.ts) - 匹配类似于 [Observable](https://github.com/tc39/proposal-observable) 的值。
 
 ### Utilities
 
